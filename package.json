@@ -1,0 +1,45 @@
+{
+  "name": "datacasting",
+  "version": "0.0.1",
+  "description": "Data converting by schema",
+  "author": "Daniel Slepov",
+  "license": "MIT",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "browser": "dist/bundle.umd.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development rollup -c -w",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "lint": "eslint --ext .js src/",
+    "test": "jest",
+    "test:badges": "npm run test -- --coverage && jest-coverage-badges"
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
+  },
+  "dependencies": {
+    "date-fns": "^2.15.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@types/jest": "^26.0.10",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "cross-env": "^7.0.2",
+    "jest": "^26.4.0",
+    "jest-coverage-badges": "^1.1.2",
+    "rollup": "^2.25.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "typescript": "^3.9.7"
+  }
+}
